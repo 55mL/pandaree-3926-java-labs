@@ -61,7 +61,7 @@ public class NumberGuessingGames {
             max_of_tries = scanner.nextInt(); // read input as max_of_tries
 
             if (max_of_tries > 0) {
-                break;
+                break; // check that maximum number of tries more than 0
             } else {
                 System.err.println("The maximum number of tries must be greater than 0"); // shows error when max_of_tries less than 0
             }

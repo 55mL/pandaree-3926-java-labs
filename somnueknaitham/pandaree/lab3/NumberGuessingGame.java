@@ -32,8 +32,8 @@ public class NumberGuessingGame {
 
         System.out.println("Welcome to a number guessing game!"); // output welcome message
 
-        int min = 1; // set a min
-        int max = 10; // set a max
+        int min = 1; // set a min value
+        int max = 10; // set a max value
         int answer = min + (int) (Math.random() * ((max - min) + 1)); // generate a random answer
         int num_try = 1; // set number of try to 1
         int max_of_tries = 5; // set maximum number of tries to 5
