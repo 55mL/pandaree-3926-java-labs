@@ -1,16 +1,16 @@
 /*
- * Author : Pandaree Somnueknaithaam
+ * Author : Pandaree Somnueknaitham
  * Student ID : 673040392-6
  * Section : 2
  * 
  * The NumberGuessingGame Program
  * 
- * This program is a number guessing game that accept a number 1 to 10 from user which the answer is randomly.
+ * This program is a number guessing game that accepts a number 1 to 10 from user, which the answer is randomly.
  * Game ends when guess the number incorrectly 5 times.
  *  
  * The output should be :
  * Welcome to a number guessing game!
- * Enter an integer between 1 and 10: <guess>
+ * Enter an integer between 1 and 10 : <guess>
  * Congratulations!         (when enters number same as answer)
  * Try a lower number!      (when enters number higher than answer)
  * Try a higher number!     (when enters number lower than answer)
@@ -27,48 +27,49 @@ public class NumberGuessingGame {
      * @param args
      */
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in); // create a scanner
 
-        System.out.println("Welcome to a number guessing game!"); // output first line
+        System.out.println("Welcome to a number guessing game!"); // output welcome message
 
         int min = 1; // set a min
         int max = 10; // set a max
-        int answer = min + (int)(Math.random()*((max-min)+1)); // use this formula to generate a random number for the answer
-       
-        int numTry = 1; // set try to 1
-        while (numTry <= 5) {
-            System.out.print("Enter an integer between 1 and 10 : " ); // output second line
+        int answer = min + (int) (Math.random() * ((max - min) + 1)); // generate a random answer
+        int num_try = 1; // set number of try to 1
+        int max_of_tries = 5; // set maximum number of tries to 5
 
-            int guess = scanner.nextInt(); // read input
+        while (num_try <= max_of_tries) {
+            System.out.print("Enter an integer between 1 and 10 : "); // ask user to guess number
 
-            if ( guess == answer ) {
+            int guess = scanner.nextInt(); // read input as guess
+
+            if (guess == answer) {
                 System.out.println("Congratulations!"); // output when win
-                if ( numTry == 1) {
-                    System.out.print("You have tried " + numTry + " time."); // output number of try when win
-                    break ;
+                if (num_try == 1) {
+                    System.out.print("You have tried " + num_try + " time."); // output number of try when win
+                    break;
                 } else {
-                    System.out.print("You have tried " + numTry + " times."); // output number of try when win
-                    break ;
+                    System.out.print("You have tried " + num_try + " times."); // output number of try when win
+                    break;
                 }
-            } else if (guess != answer) {
+            } else {
                 if (guess < answer) {
                     System.out.println("Try a higher number!"); // output when the input number less than an answer
-                }
-                else if (guess > answer){
+                } else if (guess > answer) {
                     System.out.println("Try a lower number!"); // output when the input number more than an answer
                 }
 
-                if ( numTry == 5) {
-                    System.out.print("You have tried " + numTry + " times."); // output  number of try when try 5 times
+                if (num_try == max_of_tries) {
+                    System.out.print("You have tried " + num_try + " times."); // output number of try when try 5 times
                     System.out.println(" You ran out of guesses."); // output when try 5 times
-                    System.out.println("The answer is "+ answer + "."); // output answer when try 5 times
-                }  
-                numTry += 1; // increse number of try by 1
+                    System.out.println("The answer is " + answer + "."); // output answer when try 5 times
+                }
+                num_try += 1; // increse number of try by 1
             }
-            
+
         }
-        
-        scanner.close(); 
+
+        scanner.close(); // close a scanner
     }
-    
+
 }

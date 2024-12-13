@@ -5,11 +5,29 @@
  * 
  * The NumberGuessingGames Program
  * 
+ * This program is a number guessing game.
+ * First the program will accept a min value, max value and maximum number of tries.
+ * Then accept number from user which the answer is randomly.
+ * Game ends when guess the number incorrectly for maximum number of tries times.
+ * And ask to play again if choice is "y" or "Y" the game will repeat with new randomly answer but still use last min, max anx maximum number of tries.
+ *  
  * The output should be :
+ * Welcome to a number guessing game!
+ * Enter the min value : <min>
+ * Enter the max value : <max>
+ * Enter the maximum number of tries : <max_of_tries>
+ * Enter an integer between <min> and <max> : <guess>
+ * Congratulations!         (when enters number same as answer)
+ * Try a lower number!      (when enters number higher than answer)
+ * Try a higher number!     (when enters number lower than answer)
+ * Want to play again (Y or y) : 
+ * .
+ * .
+ * .
+ * Thank you for playing our games.  Bye!
  * 
  * 
- * 
- * Last update : 12 dec 2024
+ * Last update : 13 dec 2024
  */
 
 package somnueknaitham.pandaree.lab3;
@@ -18,84 +36,84 @@ import java.util.Scanner;
 
 public class NumberGuessingGames {
 
-        public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // create a scanner
 
-        int min, max, max_of_tries;
+        int min, max, max_of_tries; // set variables as integer
 
         while (true) {
 
-            System.out.print("Enter the min value : ");
-            min = scanner.nextInt();
+            System.out.print("Enter the min value : "); // ask user to input min value
+            min = scanner.nextInt(); // read input as min
 
-            System.out.print("Enter the max value : ");
-            max = scanner.nextInt();
+            System.out.print("Enter the max value : "); // ask user to input max value
+            max = scanner.nextInt(); // read input as max
 
-            if ( min <= max ) {
+            if (min <= max) {
                 break;
             } else {
-                System.err.println("The max value must be at least equal to the min value");
+                System.err.println("The max value must be at least equal to the min value"); // shows error when max value less than min value
             }
         }
         while (true) {
-            
-            System.out.print("Enter the maximum number of tries : ");
-            max_of_tries = scanner.nextInt();
-                
-            if (max_of_tries>0) {
+
+            System.out.print("Enter the maximum number of tries : "); // ask user to input maximum number of tries
+            max_of_tries = scanner.nextInt(); // read input as max_of_tries
+
+            if (max_of_tries > 0) {
                 break;
             } else {
-                System.err.println("The maximum number of tries must be greater than 0");
+                System.err.println("The maximum number of tries must be greater than 0"); // shows error when max_of_tries less than 0
             }
         }
 
-        String choice;
-                do {
-        
-                System.out.println("Welcome to a number guessing game!");
-        
-                int num_try = 1;
-                int answer = min + (int)(Math.random()*((max-min)+1));
-        
-                while ( num_try <= max_of_tries ) {
-                    System.out.print("Enter an integer between " + min + " and " + max + " : ");
-                    int num = scanner.nextInt();
-        
-                    if (num < min || num > max) {
-                        System.err.println("The  number must be between " + min + " and " + max);
-                        continue ;
-                    }
-                    if ( num == answer ) {
-                        System.out.println("Congratulations!"); // output when win
-                        if ( num_try == 1) {
-                            System.out.println("You have tried " + num_try + " time."); // output number of try when win
-                            break ;
-                        } else {
-                            System.out.println("You have tried " + num_try + " times."); // output number of try when win
-                            break ;
-                        }
-                    } else if (num != answer) {
-                        if (num < answer) {
-                            System.out.println("Try a higher number!"); // output when the input number less than an answer
-                        } else if (num > answer){
-                            System.out.println("Try a lower number!"); // output when the input number more than an answer
-                        }
-                    
-                        if ( num_try == max_of_tries) {
-                            System.out.print("You have tried " + num_try + " times."); // output  number of try when try 5 times
-                            System.out.println(" You ran out of guesses."); // output when try 5 times
-                            System.out.println("The answer is "+ answer + "."); // output answer when try 5 times
-                        }  
-                    
-                    }
-                    num_try += 1;
+        String choice; // set variable to string
+        do {
+
+            System.out.println("Welcome to a number guessing game!"); // output welcome message
+
+            int num_try = 1; // set number of try as 1
+            int answer = min + (int) (Math.random() * ((max - min) + 1)); // generate a random answer
+
+            while (num_try <= max_of_tries) {
+                System.out.print("Enter an integer between " + min + " and " + max + " : "); // ask user to guess number
+                int guess = scanner.nextInt(); // read input as guess
+
+                if (guess < min || guess > max) {
+                    System.err.println("The  number must be between " + min + " and " + max);  // shows error when the input number less than min or more than max
+                    continue;
                 }
-                System.out.print("Want to play again (Y or y) : ");
-                choice = scanner.next();
-                } while ( choice.equalsIgnoreCase("y"));
-                System.out.println("Thank you for playing our games.  Bye!");
-        
-    scanner.close();
+                if (guess == answer) {
+                    System.out.println("Congratulations!"); // output when win
+                    if (num_try == 1) {
+                        System.out.println("You have tried " + num_try + " time."); // output number of try when win
+                        break;
+                    } else {
+                        System.out.println("You have tried " + num_try + " times."); // output number of try when win
+                        break;
+                    }
+                } else {
+                    if (guess < answer) {
+                        System.out.println("Try a higher number!"); // output when the input number less than an answer
+                    } else if (guess > answer) {
+                        System.out.println("Try a lower number!"); // output when the input number more than an answer
+                    }
+
+                    if (num_try == max_of_tries) {
+                        System.out.print("You have tried " + num_try + " times."); // output number of try when try maximum times
+                        System.out.println(" You ran out of guesses."); // output when try maximum times
+                        System.out.println("The answer is " + answer + "."); // output when try maximum times
+                    }
+
+                }
+                num_try += 1; // increse number of try by 1
+            }
+            System.out.print("Want to play again (Y or y) : "); // ask user to choose play again or not
+            choice = scanner.next(); // read input as choice
+        } while (choice.equalsIgnoreCase("y")); // if choice is "y" or "Y" do loop
+        System.out.println("Thank you for playing our games.  Bye!"); // if choice is others shows thank you message
+
+        scanner.close(); // close a scanner
     }
-    
+
 }
