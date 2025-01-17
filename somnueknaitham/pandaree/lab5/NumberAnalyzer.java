@@ -27,7 +27,7 @@
  * 1 2 3 4 5
  * numbers2 is sorted: true
  * 
- * Last update : 27 dec 2024
+ * Last update : 17 jan 2024
  */
 package somnueknaitham.pandaree.lab5;
 

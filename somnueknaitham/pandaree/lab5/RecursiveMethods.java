@@ -26,7 +26,7 @@
  * 1 2 1 2
  * Is palindrome: false
  * 
- * Last update : 27 dec 2024
+ * Last update : 17 jan 2024
  */
 package somnueknaitham.pandaree.lab5;
 
