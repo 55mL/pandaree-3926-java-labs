@@ -4,7 +4,8 @@
  * Section : 2
  * 
  * The NumberGuessingOOPGame Program
- *  This driver class has main method
+ *  This driver class has configure, play again, and main method
+ * 
  * Last update : 24 Jan 2025
  */
 package somnueknaitham.pandaree.lab6;
@@ -13,17 +14,17 @@ import java.util.Scanner;
 
 public class NumberGuessingOOPGame {
 
-    public static Scanner scanner = new Scanner(System.in); // Create a scanner
+    public static Scanner input = new Scanner(System.in); // Create a scanner
     private GuessGame game; 
 
     // Method to allow user to configurable values
     public void configure() {
         System.out.print("Enter the min value: ");
-        int min = scanner.nextInt();
+        int min = input.nextInt();
         System.out.print("Enter the max value: ");
-        int max = scanner.nextInt();
+        int max = input.nextInt();
         System.out.print("Enter the maximum number of tries: ");
-        int max_of_tries = scanner.nextInt();
+        int max_of_tries = input.nextInt();
 
         // Create a new GuessGame object
         this.game = new GuessGame(min, max, max_of_tries);
@@ -37,13 +38,14 @@ public class NumberGuessingOOPGame {
             boolean result = this.game.playSingleGame();
             System.out.println(result ? "You win!" : "Better luck next time.");
             System.out.print("Do you want to play again? (y/n): ");
-            playAgain = scanner.next().equalsIgnoreCase("y");
+            playAgain = input.next().equalsIgnoreCase("y");
             if (playAgain) {
                 configure();
             }
         } while (playAgain);
 
         System.out.println("Thank you for playing the Number Guessing Game!");
+        input.close(); // Close a scanner
     }
 
     // Main method
@@ -51,6 +53,5 @@ public class NumberGuessingOOPGame {
         NumberGuessingOOPGame program = new NumberGuessingOOPGame();
         program.configure(); // Configure values
         program.playGames(); // Start loop
-        scanner.close(); // Close a scanner
     }
 }

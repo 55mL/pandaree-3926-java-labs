@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class GuessGame {
 
     private int min, max, max_of_tries, answer, attempts; // Declare variables
-    public static Scanner scanner = new Scanner(System.in); // Create a scanner
+    public static Scanner input = new Scanner(System.in); // Create a scanner
 
     // Default constructor
     public GuessGame() {
@@ -66,11 +66,6 @@ public class GuessGame {
         max_of_tries = new_max_of_tries;
     }
 
-    // Method to random answer
-    public void generateAnswer() {
-        answer = min + (int) (Math.random() * ((max - min) + 1));
-    }
-
     // Method to return a current answer
     public int getAnswer() {
         return answer;
@@ -91,6 +86,18 @@ public class GuessGame {
         attempts = newAttempts;
     }
 
+    // Method to configure values
+    public void configureGame(int newMin, int newMax, int new_max_of_tries){
+        min = newMin;
+        max = newMax;
+        max_of_tries = new_max_of_tries;
+    }
+
+    // Method to random answer
+    public void generateAnswer() {
+        answer = min + (int) (Math.random() * ((max - min) + 1));
+    }
+
     // Method to play game
     public boolean playSingleGame() {
 
@@ -105,7 +112,7 @@ public class GuessGame {
         while (attempts <= max_of_tries) {
             System.out.print("Enter an integer between " + min + " and " + max + " : ");
 
-            int guess = scanner.nextInt();
+            int guess = input.nextInt();
 
             // Check if answer is correct
             if (guess == answer) {
