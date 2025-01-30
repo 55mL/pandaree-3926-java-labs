@@ -8,6 +8,7 @@
  *  display running stats, heart rates, and sleep hours by call the method from AppleWatchNike class
  * 
  * Output should be:
+ * 
  * AppleWatchNike(color: Space Gray price:12900.0 model name:Nike SE GPS distance:42.5 km)
  * Total distance run: 42.50 km
  * Average heart rate: 75 bpm

@@ -24,13 +24,15 @@ public class AppleWatch extends MobileDevice {
 
     // Method to give output
     public String toString(){
-        return "AppleWatch [" + "color=" + color + ", price=" + price + ", modelName=" + modelName + "]";
+        return "AppleWatch [" + "color=" + getColor() + ", price=" + getPrice() + ", modelName=" + getModelName() + "]";
     }
 
+    // Method to return a current model name
     public String getModelName(){
         return modelName;
     }
 
+    // Method to set a new model name
     public void setModelName(String modelName){
         this.modelName = modelName;
     }

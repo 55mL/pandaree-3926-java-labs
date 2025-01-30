@@ -4,7 +4,7 @@
  * Student ID : 673040392-6
  * 
  * The HealthMonitorer interface
- *  Including one method, displaySleepHours
+ *  Including one method, displaySleepHours.
  * 
  * Last update : 29 Jan 2025
  */

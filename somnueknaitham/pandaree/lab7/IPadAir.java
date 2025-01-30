@@ -35,7 +35,7 @@ public class IPadAir extends MobileDevice {
 
     // Method to give output
     public String toString() {
-        return "IPadAir [" + "color=" + color + ", price=" + price + ", storage=" + storage + ", chip=" + CHIP_NAME
+        return "IPadAir [" + "color=" + getColor() + ", price=" + getPrice() + ", storage=" + getStorage() + ", chip=" + getChipName()
                 + "]";
     }
 

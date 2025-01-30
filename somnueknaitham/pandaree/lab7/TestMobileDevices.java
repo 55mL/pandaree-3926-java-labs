@@ -8,6 +8,7 @@
  *  that user input by using comparePrice method.
  * 
  * Output should be:
+ * 
  * IPadAir chip name is Apple M2
  * IPadAir [color=Silver, price=24900.0, storage=256.0, chip=Apple M2] is not a watch
  * IPadAir [color=Rose Gold, price=19900.0, storage=64.0, chip=Apple M2] is cheaper than IPadAir [color=Silver, price=24900.0, storage=256.0, chip=Apple M2]

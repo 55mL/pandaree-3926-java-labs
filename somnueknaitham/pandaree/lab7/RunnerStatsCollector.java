@@ -4,7 +4,7 @@
  * Student ID : 673040392-6
  * 
  * The RunnerStatsCollector interface
- *  Including two methods, displayRunningStats and displayHeartRates
+ *  Including two methods, displayRunningStats and displayHeartRates.
  * 
  * Last update : 29 Jan 2025
  */

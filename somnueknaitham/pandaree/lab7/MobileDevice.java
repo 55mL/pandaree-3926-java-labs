@@ -12,6 +12,7 @@
 package somnueknaitham.pandaree.lab7;
 
 public abstract class MobileDevice {
+    
     // Declare Variables
     protected String color;
     protected double price;
