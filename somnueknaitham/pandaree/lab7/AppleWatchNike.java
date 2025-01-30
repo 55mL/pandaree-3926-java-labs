@@ -46,9 +46,10 @@ public class AppleWatchNike extends AppleWatch implements RunnerStatsCollector, 
 
     // Method to display sleep hours
     public void displaySleepHours(){
+        // If hour is one
         if (avgSleepHours == 1) {
             System.out.printf("Average sleep duration: %.2f hour\n", avgSleepHours);
-        } else {
+        } else { // Else
             System.out.printf("Average sleep duration: %.2f hours\n", avgSleepHours);
         }
     }
