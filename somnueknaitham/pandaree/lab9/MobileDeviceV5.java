@@ -12,6 +12,7 @@
 package somnueknaitham.pandaree.lab9;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.Dictionary;
@@ -47,6 +48,8 @@ public class MobileDeviceV5 extends MobileDeviceV4{
         vendorScrollPane = new JScrollPane(vendorList);
         vendorList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         vendorList.setSelectedIndex(0);
+        vendorScrollPane.setPreferredSize(new Dimension(150,80));
+        vendorScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         // Create rate slider
         rateSlider = new JSlider(0, 10);
         rateSlider.setMajorTickSpacing(1);
