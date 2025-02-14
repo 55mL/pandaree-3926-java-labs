@@ -37,8 +37,6 @@ public class MobileDeviceV5 extends MobileDeviceV4{
     protected void createFormPanel(){
         super.createFormPanel();
         // Set layout
-        newPanel = new JPanel(new GridLayout(2,2));
-        vendorPanel = new JPanel(new GridLayout(1,2));
         ratesPanel = new JPanel(new BorderLayout());
         // Set Label text
         vendorLabel = new JLabel("The device is avalable at:");

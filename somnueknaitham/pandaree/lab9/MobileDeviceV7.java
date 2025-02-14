@@ -21,6 +21,7 @@ import java.awt.*;
 
 public class MobileDeviceV7 extends MobileDeviceV6 {
 
+    protected JPanel newAndRatesPanel;
     // Constructor that call parents class
     public MobileDeviceV7(String title){
         super(title);
@@ -47,8 +48,10 @@ public class MobileDeviceV7 extends MobileDeviceV6 {
         ReadImage image = new ReadImage();
         image.setPreferredSize(new Dimension(280,350));
         // Add Panel
-        extraPanel.add(newPanel, BorderLayout.NORTH);
-        extraPanel.add(ratesPanel, BorderLayout.CENTER);
+        newAndRatesPanel = new JPanel(new BorderLayout());
+        newAndRatesPanel.add(newPanel, BorderLayout.NORTH);
+        newAndRatesPanel.add(ratesPanel, BorderLayout.SOUTH);
+        extraPanel.add(newAndRatesPanel, BorderLayout.NORTH);
         extraPanel.add(image, BorderLayout.SOUTH);
     }
 
