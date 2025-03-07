@@ -15,7 +15,6 @@
 package somnueknaitham.pandaree.lab10;
 
 import java.awt.event.*;
-import java.util.List;
 import javax.swing.*;
 import javax.swing.event.*;
 
