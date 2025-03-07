@@ -1,4 +1,5 @@
 /*
+ * To P'TA please download new update of MobileDeviceV7 before run MobileDeviceV8
  * Author : Pandaree Somnueknaitham
  * Section : 2
  * Student ID : 673040392-6
@@ -48,14 +49,14 @@ public class MobileDeviceV8 extends MobileDeviceV7 implements ActionListener{
             vendorInput = vendorList.getSelectedValuesList().toString().replaceAll("[\\[\\]]", "");
             ratesInput = rateSlider.getValue(); //
             // Information dialog pattern
-            JOptionPane.showMessageDialog(this, "Device Name:" + deviceInput + 
+            JOptionPane.showMessageDialog(this, "Device Name: " + deviceInput + 
             "\nBrand: " + brandInput +
             "\nPrice: " + priceInput +
             "\nType: " +  typeInput +
             "\nOperating System: " + osInput +
             "\nFeatures: " + featureInput +
             "\nAvailable at: " + vendorInput + 
-            "\nRating: " + ratesInput);
+            "\nRating: " + ratesInput, "Device Information", JOptionPane.INFORMATION_MESSAGE);
         }
 
         // If click Cancel button, all input should be reset to empty and some are default values.

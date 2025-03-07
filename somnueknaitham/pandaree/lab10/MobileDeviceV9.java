@@ -57,7 +57,7 @@ public class MobileDeviceV9 extends MobileDeviceV8 {
                 int returnValue = fileChooser.showOpenDialog(MobileDeviceV9.this); // Display a file chooser dialog allowing the user to select a file
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     File selectedFile = fileChooser.getSelectedFile(); // Get selected file
-                    JOptionPane.showMessageDialog(MobileDeviceV9.this, "Data is saved to " + selectedFile.getName()); // Display a dialog informing that the file has been saved.            
+                    JOptionPane.showMessageDialog(MobileDeviceV9.this, "Data is saved to " + selectedFile.getName() + " successfully!", "Save",JOptionPane.INFORMATION_MESSAGE); // Display a dialog informing that the file has been saved.            
                 }
         } 
         

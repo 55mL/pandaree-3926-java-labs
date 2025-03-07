@@ -31,7 +31,7 @@ public class MobileDeviceV10 extends MobileDeviceV9 implements ListSelectionList
         // Check if the source is the system choice
         if (e.getSource() == systemChoice) {
             osInput = systemChoice.getSelectedItem().toString(); // Get selected OS
-            JOptionPane.showMessageDialog(this, "You selected Operating System: " + osInput); // Show message dialog
+            JOptionPane.showMessageDialog(this, "You selected Operating System: " + osInput, "OS Selection", JOptionPane.INFORMATION_MESSAGE); // Show message dialog
         }
     }
 
@@ -43,7 +43,7 @@ public class MobileDeviceV10 extends MobileDeviceV9 implements ListSelectionList
         vendorInput = vendorList.getSelectedValuesList().toString().replaceAll("[\\[\\]]", "");
         // If there are selected vendors
         if (!vendorInput.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Device is available at: " +  vendorInput ); // Show message with selected vendors
+            JOptionPane.showMessageDialog(this, "Device is available at: " +  vendorInput, "Vendor Selection", JOptionPane.INFORMATION_MESSAGE); // Show message with selected vendors
             }
         }
     }
@@ -58,7 +58,7 @@ public class MobileDeviceV10 extends MobileDeviceV9 implements ListSelectionList
         // Check if rate slider is not adjusting
         if (!rateSlider.getValueIsAdjusting()) {
             ratesInput = rateSlider.getValue(); // Get selected rating value
-            JOptionPane.showMessageDialog(this, "New rating: " + ratesInput); // Show message dialog
+            JOptionPane.showMessageDialog(this, "New rating: " + ratesInput, "Rating Adjustment", JOptionPane.INFORMATION_MESSAGE); // Show message dialog
         }
     }
 
