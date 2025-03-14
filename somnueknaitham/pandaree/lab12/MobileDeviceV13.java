@@ -24,7 +24,7 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
 
     // Declare variables
     protected JButton addButton, displayButton;
-    protected ArrayList<MobileDevice> devices = new ArrayList<MobileDevice>();
+    protected ArrayList<MobileDevice> deviceList = new ArrayList<MobileDevice>();
     MobileDevice device;
     
     // Constructor
@@ -80,18 +80,18 @@ public class MobileDeviceV13 extends MobileDeviceV12 {
             JOptionPane.showMessageDialog(this, tabletRButton.getText() + " " + deviceNameTextField.getText() + " is added" );
         }
         // Add device to device list
-        devices.add(device);
+        deviceList.add(device);
     }
 
     // Method to display list when click display button
     public void handleDisplayButton() {
-        StringBuilder deviceList = new StringBuilder();
+        StringBuilder message = new StringBuilder();
         // Add each one to list
-        for (MobileDevice device : devices) {
-            deviceList.append(device.toString()).append("\n");
+        for (MobileDevice device : deviceList) {
+            message.append(device.toString()).append("\n");
         }
         // Display list dialog
-        JOptionPane.showMessageDialog(this, deviceList);
+        JOptionPane.showMessageDialog(this, message);
     }
 
     // Method to add action listener
