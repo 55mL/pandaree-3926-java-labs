@@ -39,7 +39,7 @@ public class MobileDeviceV7 extends MobileDeviceV6 {
         // Set selection of operating system to Android
         systemChoice.setSelectedItem("Android");
         // Pre-fill data in feature text area
-        featureTextArea.setText("- 200MP Camera\n - 1TB Storage\n - Snapdragon Gen 4 Processor\n - 5000mAh Battery\n - 6.8-inch AMOLED Display\n- 120Hz Refresh Rate\n - 5000mAh Battery with Fast Charging");
+        featureTextArea.setText("- 200MP Camera\n- 1TB Storage\n- Snapdragon Gen 4 Processor\n- 5000mAh Battery\n- 6.8-inch AMOLED Display\n- 120Hz Refresh Rate\n- 5000mAh Battery with Fast Charging");
         // Set selection of vendor list to index 0
         vendorList.setSelectedIndex(0);
         // Set value of rate slider to 9
